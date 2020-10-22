@@ -65,7 +65,7 @@ bot.on("message", async message => {
         fetch('https://meme-api.herokuapp.com/gimme')
             .then(res => res.json())
             .then(json => {
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                     .setTitle(json.title)
                     .setImage(json.url)
                     .setFooter(`Link: ${json.postLink} | Subreddit: ${json.subreddit}`)
