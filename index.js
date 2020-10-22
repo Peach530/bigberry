@@ -61,7 +61,7 @@ bot.on("message", async message => {
     }
 
     if(command === "meme") {
-        let msg = await message.channel.send("Fetching a meme, please wait a second!");
+        let msg = await message.channel.send("GOCHA!");
         fetch('https://meme-api.herokuapp.com/gimme')
             .then(res => res.json())
             .then(json => {
