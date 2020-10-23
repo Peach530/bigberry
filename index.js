@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const fetch = require('node-fetch');
 const bot = new Discord.Client();
+const randomPuppy = require('random-puppy');
 
 const prefix = "bery!"
 
@@ -78,8 +79,7 @@ bot.on("message", async message => {
 
 bot.on("message", async message => {
     if (command === `${prefix}cat`) {
-        if (message.author.bot) return;
-        if (message.channel.type === "dm") return;
+       
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
         const random = subReddits[Math.floor(Math.random() * subReddits.length)]
 
