@@ -60,22 +60,7 @@ bot.on("message", async message => {
             .catch(e => message.reply(`Sorry I couldn't ban them! Error: ${e}`));
         message.reply(`:white_check_mark: User banned!`);
     }
-
-    if(command === "meme") {
-        let msg = await message.channel.send("GOCHA!");
-        fetch('https://meme-api.herokuapp.com/gimme')
-            .then(res => res.json())
-            .then(json => {
-                let embed = new Discord.MessageEmbed()
-                    .setTitle(json.title)
-                    .setImage(json.url)
-                    .setFooter(`Link: ${json.postLink} | Subreddit: ${json.subreddit}`)
-                msg.edit(embed)
-            });
-    }
-    
-    
-bot.on("message", async message => {    
+     
     if (command === "cat") {
        
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
@@ -85,9 +70,31 @@ bot.on("message", async message => {
 
         const embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setImage(img)
-            .setTitle(`★~(◠︿◕✿)`)
-            .setURL(`https://reddit.com/r/${random}`)
+		.setTitle('json.title')
+		.setAuthor('BigBery', 'https://media.discordapp.net/attachments/768993167357771777/769236103332233226/unknown.png')
+		.setURL(`https://reddit.com/r/${random}`)
+		.setTimestamp()
+		.setFooter('Bendy Development', 'https://images-ext-1.discordapp.net/external/iLWEn8WA-KTd-w9KlU6s4HdLW9PPzZb-16IO0ML3tnA/%3Fwidth%3D294%26height%3D294/https/media.discordapp.net/attachments/750544950860447764/756916779791679599/bendy_regular.jpg');
+        
+        return message.channel.send(embed)
+            .catch(err => message.reply(`Something went wrong... ${err}`));
+    }
+});
+
+  if (command === "dog") {
+       
+        const subReddits = ["dog", "doggy", "dogs", "dogloaf"]
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)]
+
+        const img = await randomPuppy(random);
+
+        const embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+		.setTitle('json.title')
+		.setAuthor('BigBery', 'https://media.discordapp.net/attachments/768993167357771777/769236103332233226/unknown.png')
+		.setURL(`https://reddit.com/r/${random}`)
+		.setTimestamp()
+		.setFooter('Bendy Development', 'https://images-ext-1.discordapp.net/external/iLWEn8WA-KTd-w9KlU6s4HdLW9PPzZb-16IO0ML3tnA/%3Fwidth%3D294%26height%3D294/https/media.discordapp.net/attachments/750544950860447764/756916779791679599/bendy_regular.jpg');
 
         return message.channel.send(embed)
             .catch(err => message.reply(`Something went wrong... ${err}`));
