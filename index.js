@@ -70,7 +70,7 @@ bot.on("message", async message => {
 
         const embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
-		.setTitle('IT\'S DA KITTY')
+		.setTitle('BERY PRETTY KITTY')
 		.setAuthor('BigBery', 'https://media.discordapp.net/attachments/768993167357771777/769236103332233226/unknown.png')
 		.setURL('https://reddit.com/r/${random}')
 	 	.setImage(img)
