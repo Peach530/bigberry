@@ -60,6 +60,8 @@ bot.on("message", async message => {
             .catch(e => message.reply(`Sorry I couldn't ban them! Error: ${e}`));
         message.reply(`:white_check_mark: User banned!`);
     }
+	
+	bot.on("message", async message => {
      
     if (command === "cat") {
        
