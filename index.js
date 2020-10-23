@@ -77,7 +77,7 @@ bot.on("message", async message => {
 });
 
 bot.on("message", async message => {
-    if (message.content.toLocaleLowerCase() === ${prefix} + `cat`) {
+    if (command === `${prefix}cat`) {
         if (message.author.bot) return;
         if (message.channel.type === "dm") return;
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
