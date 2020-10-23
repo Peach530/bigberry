@@ -73,6 +73,7 @@ bot.on("message", async message => {
 		.setTitle('IT\'S DA KITTY')
 		.setAuthor('BigBery', 'https://media.discordapp.net/attachments/768993167357771777/769236103332233226/unknown.png')
 		.setURL('https://reddit.com/r/${random}')
+	 	.setImage(img)
 		.setTimestamp()
 		.setFooter('Bendy Development', 'https://images-ext-1.discordapp.net/external/iLWEn8WA-KTd-w9KlU6s4HdLW9PPzZb-16IO0ML3tnA/%3Fwidth%3D294%26height%3D294/https/media.discordapp.net/attachments/750544950860447764/756916779791679599/bendy_regular.jpg');
         
