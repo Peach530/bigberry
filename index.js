@@ -74,6 +74,8 @@ bot.on("message", async message => {
             });
     }
     
+    
+bot.on("message", async message => {    
     if (command === "cat") {
        
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
