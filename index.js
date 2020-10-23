@@ -74,7 +74,7 @@ bot.on("message", async message => {
             });
     }
     
-    if (command === `${prefix}cat`) {
+    if (command === "cat") {
        
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
         const random = subReddits[Math.floor(Math.random() * subReddits.length)]
