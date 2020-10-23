@@ -73,11 +73,7 @@ bot.on("message", async message => {
                 msg.edit(embed)
             });
     }
- 
- 
-});
-
-bot.on("message", async message => {
+    
     if (command === `${prefix}cat`) {
        
         const subReddits = ["cat", "kitty", "cats", "catloaf"]
@@ -91,11 +87,10 @@ bot.on("message", async message => {
             .setTitle(`★~(◠︿◕✿)`)
             .setURL(`https://reddit.com/r/${random}`)
 
-        message.channel.send(embed)
+        return message.channel.send(embed)
             .catch(err => message.reply(`Something went wrong... ${err}`));
-        return;
     }
-
+});
 //THIS IS THE COMMANDS
 
 bot.login(process.env.token);
