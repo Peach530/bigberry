@@ -76,6 +76,26 @@ bot.on("message", async message => {
  
 });
 
+bot.on("message", async message => {
+    if (message.content.toLocaleLowerCase() === ${prefix} + `cat`) {
+        if (message.author.bot) return;
+        if (message.channel.type === "dm") return;
+        const subReddits = ["cat", "kitty", "cats", "catloaf"]
+        const random = subReddits[Math.floor(Math.random() * subReddits.length)]
+
+        const img = await randomPuppy(random);
+
+        const embed = new Discord.MessageEmbed()
+            .setColor('RANDOM')
+            .setImage(img)
+            .setTitle(`★~(◠︿◕✿)`)
+            .setURL(`https://reddit.com/r/${random}`)
+
+        message.channel.send(embed)
+            .catch(err => message.reply(`Something went wrong... ${err}`));
+        return;
+    }
+
 //THIS IS THE COMMANDS
 
 bot.login(process.env.token);
